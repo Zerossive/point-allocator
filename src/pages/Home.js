@@ -181,7 +181,7 @@ export default function Home() {
                                 >
                                     <FaTimes className='px-5 w-max' />
                                     <span className='pr-5 font-bold'>
-                                        RESET DATA
+                                        RESET
                                     </span>
                                 </Button>
                             </div>
@@ -203,7 +203,7 @@ export default function Home() {
                                     <Button height='50px'>
                                         <FaDownload className='px-5 w-max' />
                                         <span className='pr-5 font-bold'>
-                                            DOWNLOAD DATA
+                                            DOWNLOAD
                                         </span>
                                     </Button>
                                 </a>
@@ -225,7 +225,7 @@ export default function Home() {
                                             onChange={handleUpload}
                                         />
                                         <span className='pr-5 font-bold'>
-                                            UPLOAD DATA
+                                            UPLOAD
                                         </span>
                                     </label>
                                 </Button>

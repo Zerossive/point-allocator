@@ -1,6 +1,6 @@
 import { React, useState } from "react";
 import Button from "./Button";
-import { FaPlus, FaTimes } from "react-icons/fa";
+import { FaPlus } from "react-icons/fa";
 import { useGlobalContext } from "../context";
 
 export default function Category(props) {
@@ -45,7 +45,7 @@ export default function Category(props) {
             [newId]: {
                 category: title,
                 title: "New Stat",
-                description: "Description",
+                description: "---",
                 minPoints: 0,
                 allocatedPoints: 5,
                 maxPoints: 10,
@@ -58,7 +58,7 @@ export default function Category(props) {
     };
 
     return (
-        <div className='p-5 w-full md:w-1/2 min-w-min'>
+        <div className='p-5 w-full min-w-full xl:min-w-min md:w-1/2 max-w-full flex-grow'>
             {/* Category title */}
             {!editCategory && (
                 <h2
@@ -70,24 +70,14 @@ export default function Category(props) {
             )}
             {/* Edit category title */}
             {editCategory && (
-                <div className='w-full flex px-5'>
-                    <input
-                        type='text'
-                        placeholder={title}
-                        className='text-3xl w-9/12 md:w-10/12 flex-grow bg-transparent text-center md:text-left border'
-                        autoFocus
-                        onKeyDown={handleCategoryTitle}
-                    />
-                    <div className='w-3/12 md:w-2/12 px-5'>
-                        <Button
-                            width='100%'
-                            height='100%'
-                            onClick={() => setEditCategory(!editCategory)}
-                        >
-                            <FaTimes className='w-max' />
-                        </Button>
-                    </div>
-                </div>
+                <input
+                    type='text'
+                    placeholder={title}
+                    className='text-3xl p-1 w-full bg-transparent text-center mb-5 md:text-left md:mx-5 md:mb-0'
+                    autoFocus
+                    onKeyDown={handleCategoryTitle}
+                    onBlur={() => setEditCategory(false)}
+                />
             )}
 
             {props.children}
